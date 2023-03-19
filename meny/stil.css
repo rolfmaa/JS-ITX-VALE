@@ -1,0 +1,75 @@
+/*
+
+background-color: #b7d7e8; // Bakgrunn body
+background-color: #daebe8; // Bakgrunn boks
+
+background-color: #c5d5cb;
+background-color: #e3e0cf;
+*/
+
+h1{
+	color: blue;
+	background-color: #D2FDFF;
+	text-align: center;
+}
+h2{
+	color: blue;
+	background-color: #D2FDFF;
+	text-align: center;
+}
+h3{
+	/*color: #303C6C;*/
+	background-color: #D2FDFF;
+	color: red;
+	text-align: center;
+}
+body {
+	background-color: #B4DFE5;
+}
+.container {
+	display:flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	border-color: #b7d7e8;	
+}
+
+.boks {
+	background-color: #daebe8;
+	border-style: groove;  /* ridge,inset,outset */
+	height: 40px;
+	width: 95%;
+	margin-left:  20px;
+	margin-right: 20px;
+	margin-top:  5px;
+	text-align: center;
+	border-radius: 4px;
+}
+* {
+  box-sizing: border-box;
+}
+
+/* Create columns that floats next to each other */
+.column1 {
+  float: left;
+  width: 47%;
+  margin: 1%;
+  padding: 10px;
+  height: auto; /* Should be removed. Only for demonstration */
+  border: solid 2px grey;
+}
+.column2 {
+  float: left;
+  width: 47%;
+  margin: 1%;
+  padding: 10px;
+  height: auto; /* Should be removed. Only for demonstration */
+  border: solid 2px grey;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}

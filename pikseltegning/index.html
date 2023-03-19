@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="no">
+    <head>
+		<meta charset="utf-8" />
+		<title>Pikseltegning</title> 
+		<link   rel = "stylesheet" type="text/css" href="stil.css" />
+		<script src = "script.js"> </script> 	<!-- Programmets egendefinert kode -->
+	</head>
+	
+	<body>	
+		<center>
+		<h1>Pikseltegning i Canvas</h1>
+		<p>
+		Viser hvordan tegne i en html5 canvas ved pikselkoodinater. Origo er i øvre venstre hjørne. 
+		Nedre høyre hjørne har koordinatene (width,height). Disse verdiene kan du sette i html.
+		Klikk i canvas med musa eller tykk på tastaturet
+		<p>
+		
+		<button 	id 	= "sirkel"> Sirkel</button>
+		<button 	id 	= "fylt_sirkel"> Fylt sirkel</button>	
+		<button 	id 	= "fylt_rektangel"> Fylt rektangel</button>		
+		<button 	id 	= "viskut"> Visk ut</button> 
+		<input      id  = "bakgrunn" value="white" </input><br><br>
+		<canvas 	id 	= "canvas" width= "600px" height = "400px" > </canvas> <br>
+		<textarea 	id 	= "meldinger" cols = "52" rows = "15"> </textarea> <!-- Python grensesnittet print skriver inn her -->
+		</center>
+    </body>
+	
+</html>
