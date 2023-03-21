@@ -1,7 +1,7 @@
 //--- Mal/eksempelprogram for tegning i canvas.
 
 //--- GLOBALE variabler for programmet
-let canvas,ctx;      // Canvas og 2D tegnekonteks
+let canvas,ctx;      // Canvas og 2D tegnekontekst
 let bgcol = 'white';
 
 //--- THE IMPORTANT GETTING STARTED
@@ -19,10 +19,11 @@ function winInit(){ // Hovedprogrammet
 	
 	elGetId("meldinger").style.width = canvas.width+'px';
 	visTekst()
+	konsoll('Programmets konsoll forutskrift:')
 
 }
 //---TO MAKE CODE IT EASIER
-function elGetId(idname){ // Litt enklere å kode med denne
+function elGetId(idname){ // Litt enklere å kode med denne. Finnes i ../kodebiblioteker/teamtools.js
 	return document.getElementById(idname)
 }
 function konsoll(text){ // Utskrift i konsollet/meldingsvinduet.  
@@ -48,11 +49,13 @@ function visTekst(){
 	ctx.fillText('med', 50,150)
 	ctx.font = '20px serif';
 	ctx.fillText('html5 canvas', 50,190)
+	konsoll('Kjører visTekst()')
 }
 function visFyltRektangel(){ // Grønn sirkel tegnes med pikselkoordinater. Se andre metoder i w3schools.
 	ctx.fillStyle = 'lightblue';
 	ctx.fillRect(0, 0, canvas.width, 20);
 	ctx.fillRect(0, canvas.height-20, canvas.width, 20);
+	konsoll('Kjører visFyltRektangel()')
 }
 function visSirkel(){ // Grønn sirkel tegnes med pikselkoordinater. Se andre metoder i w3schools.
 	let radius = 30, centerX = 300, centerY=200;
@@ -61,6 +64,7 @@ function visSirkel(){ // Grønn sirkel tegnes med pikselkoordinater. Se andre me
 	ctx.lineWidth = 1;
 	ctx.strokeStyle = 'red';;
 	ctx.stroke();
+	konsoll('Kjører visSirkel()')
 }
 function visFyltSirkel(){ // Grønn sirkel tegnes med pikselkoordinater. Se andre metoder i w3schools.
 	let radius = 13, centerX = 300, centerY=200;
@@ -69,6 +73,7 @@ function visFyltSirkel(){ // Grønn sirkel tegnes med pikselkoordinater. Se andr
 	ctx.fillStyle = 'green';
 	ctx.fill();
 	ctx.stroke();
+	konsoll('Kjører visFyltSirkel()')
 }
 //
 //---HENDELSER VED MUSKLIKK OG TASTATURTRYKK
