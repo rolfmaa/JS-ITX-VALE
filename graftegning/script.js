@@ -12,7 +12,8 @@ function winInit(){ // Hovedprogrammet
 	let [width,height] = tegnHentPixGeometri(); 
 	elGetId('meldinger').style.width = width+'px';
 	visGraf()
-	print('Klikk med musa på grafen') // Fra Fusuin. Skriver i textarea med id='meldinger'
+	print('Klikk med musa på grafen') // Fra Fusion. Skriver i textarea med id='meldinger'
+	tegnMelding('Klikk på grafen')
 }
 
 function f(x){ // Matematisk funksjon
@@ -34,12 +35,12 @@ function visGraf(){  // Fulabs tegnepakke benyttes.
 	tegnYlinje(f(xPOI),'red') // Horisontal linje
 	
 	tegnTittel('sin(x)*cos(2*x)');
-	clearprint();  
 }
 
-function vedMusklikk(event){
+function vedMusklikk(event){ 
 	let xp = event.offsetX
 	let	yp = event.offsetY
 	let [xv,yv] = tegnPix2V(xp,yp) // Verdenskoordinater fra pikselkoordinater
 	print('Punkt:', '('+xv.toFixed(2)+','+ yv.toFixed(2) +')' );
+	tegnPunkt(xv,f(xv))
 }
