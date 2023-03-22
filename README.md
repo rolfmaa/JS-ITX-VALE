@@ -5,7 +5,7 @@
 Dette repositoriet inneholder komplette kodeeksempler programmert med *HTML/CSS/JavaScript*. Eksemplene er valgt ut med tanke på å være en hjelp for elever og lærere i videregående skole, som ønsker at fagene der JavaScript er valgt, også kan gi elevene en bedre valgmulighet i de fagene der læringsressursene kun finnes med Python.
 
 ## Komme i gang
-Eksemplene kjøres enklest fra linken https://js-itx-vale.netlify.app/. Nettsida du ser lar deg navigere videre til de utvalgte kodeeksemplene/programmene. Utvalget i menyen er eksempler på hvordan løse forskjellige problemstillinger. Her er eksempler fra  realfagene på videregående skole, eller undervisning i forskjellige programmeringsfag. 
+Eksemplene kjøres enklest fra linken https://js-vale.netlify.app/. Nettsida du ser lar deg navigere videre til de utvalgte kodeeksemplene/programmene. Utvalget i menyen er eksempler på hvordan løse forskjellige problemstillinger. Her er eksempler fra  realfagene på videregående skole, eller undervisning i forskjellige programmeringsfag. 
 
 Alle løsningen følger et standard oppsett der html, css og javascript er organisert i en standard mappestruktur. Kildekoden vil du derfor finne i fila script.js.  Kode som deles mellom de forskjellige programmene,  lagres i mappa kodebiblioteker. Her finnes noen funksjoner som
 forenkler koblingen til DOM.
