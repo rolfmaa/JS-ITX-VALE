@@ -1,0 +1,43 @@
+body {
+  background-color: silver;                 
+}
+.hoved {
+  width: auto;                  
+  margin: auto;          
+  padding: 10px;	             
+  border: 0px; 
+}
+.meny {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 0;     
+}
+button {
+  background-color: olive;	
+  color: black;
+  margin: 10px;
+  padding: 15px;
+  width: 225px;
+  height: auto;
+  border-radius: 5px;
+  font-size: 16px;
+  display: flex;
+  align-items: top;
+}
+button:hover{
+	background-color: #E8ECEB;
+}
+button:active{
+	background-color: yellow;
+}
+
+.anker {
+  position: relative;
+  top: 10px;
+  text-align:top;
+  width: 90%
+}
+hr.divider {
+  border-top: 3px solid blue;
+  margin-bottom: 18px;
+}

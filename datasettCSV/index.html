@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+	<meta charset="utf-8" />
+	<title> Les lokal fil</title> 
+	<link rel="stylesheet" type="text/css" href="../kodebiblioteker/stil.css" />	
+
+	<!-- Inkluderer biblioteker fra fulib.no. Funksjonsbeskrivelse i manualsidene . -->
+	<script src = "https://fulab.no/fulibs/fusionSDK.js" > </script>
+	<script src = "../kodebiblioteker/teamtools.js" > </script>
+	<script src = "script.js"> </script> 	<!-- Programmets egendefinert kode -->
+	<center>
+		<h1>Datasett fra CSV-fil</h1>
+		<p>
+		Dette er er program som viser hvordan å lese inn data fra ei CSV-fil på egen maskin.<br>
+		Koden kan tilpasses forskjellig innhold på tilsvarende filer. <br>Eksempelfil følger med når du laster ned
+		(kloner) til egen maskin.
+		</p>
+		<br><br>
+		<label for  ='valgtCSV' > Les inn CSV-fil fra egen maskin </label>
+	    <input type ="file" id="valgtCSV"  accept = '.csv' > 
+		<br><br>
+		<canvas 	id = "canvas" width= "600px" height = "450px"> </canvas><br>
+	<center>
+</head> 
+</html>
