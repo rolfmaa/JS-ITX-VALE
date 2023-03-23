@@ -12,7 +12,7 @@ let separator = ';'				// Skilletegnet på fila
 window.onload = winInit ;   // Når nettsiden er ferdig lasta kjøres winInit
 
 function winInit(){
-	tegnBrukCanvas("tegne"); // Kobler sammen canvas med tegnepakka
+	tegnBrukCanvas("canvas"); // Kobler sammen canvas med tegnepakka
 	elGetId("valgtCSV").onchange  = csvInput; // Funksjonen som mottar innholdet etter innlesing
 	visCSVdata();
 }
