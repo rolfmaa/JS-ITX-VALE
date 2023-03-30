@@ -25,13 +25,13 @@ function visGraf(){  // Fulabs tegnepakke benyttes.
 	tegnBrukXY(-6.3,6.3,-2,2);
 	tegnAkser();
 	tegnGraf(f,'black');   // Her tegnes den matematiske funksjonen sin(x) som finnes i fusionInterface.js
+	
 	xPOI = 1.4
 	tegnXlinje(xPOI,'blue') // Vertikal linje
 	let a = tegnTangent(xPOI,f)
 	tegnStigning(xPOI,f(xPOI),a) 
 	
 	xPOI = 4.41
-	tegnP
 	tegnYlinje(f(xPOI),'red') // Horisontal linje
 	
 	tegnTittel('sin(x)*cos(2*x)');
