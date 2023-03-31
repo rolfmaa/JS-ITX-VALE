@@ -32,7 +32,7 @@ function visStolpediagram(merkelapp, frekvenser, tittel='tittel',stolpefarge='li
 						  tittelfarge='blue',tekstfarge='black',tekststørrelse=12,plassering='under'){
 
 	let bredde = 0.65;     // Stolpebredde
-	let luftb   = 0.65/2;  // Luft mellom stolpene
+	let luftb   = 1-0.65;  // Luft mellom stolpene
 	x1 = 0
 	x2 = x1 + frekvenser.length*bredde + (frekvenser.length+1)*luftb 
 	tegnBrukXY(x1,x2,0,max(frekvenser)*1.20)    // Verdenskoordinater
