@@ -1,9 +1,12 @@
 body {
-  background-color: silver;                 
+  background-color: silver;  
+  margin: 0;
+  padding: 0               
 }
 .hoved {
-  width: auto;                  
-  margin: auto;          
+  width: 90%;                  
+  height: auto; 
+  margin: 0 auto;         
   padding: 10px;	             
   border: 0px; 
 }
@@ -13,7 +16,7 @@ body {
   flex-grow: 0;     
 }
 button {
-  background-color: olive;	
+  background-color: hsl(51, 81%, 55%);	
   color: black;
   margin: 10px;
   padding: 15px;

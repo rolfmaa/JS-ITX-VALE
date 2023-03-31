@@ -1,5 +1,7 @@
 body {
-	background-color: Moccasin;
+	background-color: lightgrey;
+	margin: 0;
+	padding: 0;
 }
 h1,h2{
 	color: blue;
@@ -13,4 +15,10 @@ h1,h2{
 #meldinger {
 	border: solid 2px orange;
 	border-radius: 5px;
+}
+.container {
+	width: 600px;
+	height: 100%;
+	margin: 0 auto;
+	padding: 20px;
 }
