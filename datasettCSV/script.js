@@ -19,22 +19,41 @@ function winInit(){
 }
 
 //
-// De neste to funksjonene kan brukes ved innlesing av fil fra en server.
-// Direkte innlesing fra fil må løses med async og await.
+// De neste tre funksjonene kan brukes ved innlesing av fil fra en server.
+// Direkte innlesing fra serverfil løses med async og await.
+// Legg merke til JQuery biblioteket som er inkludert i HTML
+// Og at det er bare er funksjonen csvAnalyser som er spesifikk for dette datasettet.
 //
-async function lesFil(filnavn) {
-	filinnhold = await lastInn(filnavn);
-	csvAnalyser(filinnhold);
+async function lesFil(filnavn) { // Prosess: sjekk, les inn, analyser
+	if (sjekkFilServer(filnavn)){ 
+		try {
+			filinnhold = await lastInn(filnavn);
+			csvAnalyser(filinnhold); // Analyserer filas innhold
+		} catch (error) {
+			console.error('Error:', error.message);
+		}
+	}
+	else {
+		alert('Fant ikke fila :'+filnavn)
+		return false
+	}
 }
 
-function lastInn(file) {
+function lastInn(file) { // Laster inn filinnholdet fra fila
     return fetch(file).then((response) => response.text() );
 }
 
+function sjekkFilServer(url){ // Sjekker om angitt fil finnes
+	var http = jQuery.ajax({
+        type:"HEAD", //Not get
+        url: url,
+        async: false
+    })
+    return http.status!=404;
+}
 //
 // Så kommer hjelpefunksjoner for å analysere datasettet og vise innholdet grafisk i canvas
 //
-
 function csvInput(){ // Funksjon om knyttes til innlesingsknappen for CSV
 	let file = this.files[0]; // Objektet som lagre informasjonen etter fil-inn dialogen
 	let reader = new FileReader();
@@ -45,23 +64,23 @@ function csvInput(){ // Funksjon om knyttes til innlesingsknappen for CSV
 	reader.readAsText(file);
 }
 
-function csvAnalyser(innhold){    // Behandler CSV-data og plotter
+function csvAnalyser(innhold){    // Behandler CSV-data og kaller opp plottefunksjonen
 	xArr = [];
 	yArr = [];
 	let linjer = innhold.split('\n');
 	tittel = linjer[0] // Første linje brukes i dette tilfellet som tittel
-	aksetekst = linjer[1].split(separator)
+	aksetekst = linjer[1].split(separator); // Aksetekster på neste linje
 	let rad = []
-	for (let i = 2; i < linjer.length; i++){
+	for (let i = 2; i < linjer.length; i++){ // Deretter datapunktene. Ett punkt per linje
 		rad = linjer[i].split(separator);
 		xArr.push(parseFloat(rad[0]));
 		yArr.push(parseFloat(rad[1]));
 	}
-	visCSVdata();
+	visCSVdata(); // Plotter fra arrayene
 }
 
-function visCSVdata(){ // Plotter datasettet i arrayene 
-    tegnBrukBakgrunn()
+function visCSVdata(){ // Plottefunksjonen
+    tegnBrukBakgrunn('lightgrey')
 	if (xArr.length < 2){
 		tegnBrukXY(0,1,0,1);
 		tegnTekst('Ingen data å plotte',0.35,0.5);
@@ -72,7 +91,6 @@ function visCSVdata(){ // Plotter datasettet i arrayene
 		let y1 = min(0.0,yArr)
 		let y2 = max(yArr)
 		tegnBrukXY(x1,x2,y1,y2); // Verdenskoordinater
-		tegnBrukBakgrunn('lightgrey') //V isker ut i tilfelle innlesing av flere filer
 		tegnKurve(xArr,yArr,'blue');   // Grafen
 		tegnMarkørliste(xArr,yArr,'sirkel','red',3);   // Symboler for hver punkt
 		tegnAkser(aksetekst[0],aksetekst[1]); // Akser med tekst fra fila (linje 1 i dette tilfellet)

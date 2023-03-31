@@ -5,7 +5,7 @@
 	<title> Les lokal fil</title> 
 	<link rel="stylesheet" type="text/css" href="../kodebiblioteker/stil.css" />
 
-	<!-- Inkluderer biblioteker fra fulib.no. Funksjonsbeskrivelse i manualsidene . -->
+	<script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
 	<script src = "https://fulab.no/fulibs/fusionSDK.js" > </script>
 	<script src = "../kodebiblioteker/teamtools.js" > </script>
 	<script src = "script.js"> </script> 	<!-- Programmets egendefinert kode -->
@@ -17,7 +17,8 @@
 		<p>
 		Dette er et program som viser hvordan å lese inn data fra ei CSV-fil på egen maskin.
 		Koden kan tilpasses forskjellig innhold på tilsvarende filer. 
-		Eksempelfil følger med når du laster ned (kloner) til egen maskin. Koden fungerer med filer der
+		Eksempelfil følger med når du laster ned (kloner) til egen maskin. 
+		Koden i dette programmet fungerer med filer med innhold som dette:
 			<ul>
 				<li>Tittel er første linje</li>
 				<li>Aksetekster på andre linje</li>
@@ -25,7 +26,7 @@
 				<li>Skilletegnet er ; (semikolon)</li>
 			</ul>
 		</p>
-		<br><br>
+		<br>
 		<label for  ='valgtCSV' > Les inn CSV-fil fra egen maskin </label>
 	    <input type ="file" id="valgtCSV"  accept = '.csv' > 
 		<br><br>
