@@ -20,27 +20,27 @@ function f(x){ // Matematisk funksjon
 	return (sin(x)*cos(2*x)) // Alternativt Math.sin(x) eller Math.cos(x)
 }
 
-function visGraf(){  // Fulabs tegnepakke benyttes.
+function visGraf(){  // Fulabs tegnepakke benyttes. Geogebra-lignende APIer
     tegnBrukBakgrunn('lightgrey');
 	tegnBrukXY(-6.3,6.3,-2,2);
 	tegnAkser();
-	tegnGraf(f,'black');   // Her tegnes den matematiske funksjonen sin(x) som finnes i fusionInterface.js
+	tegnGraf(f,'black');   // Her tegnes den matematiske funksjonen definert over
 	
 	xPOI = 1.4
 	tegnXlinje(xPOI,'blue') // Vertikal linje
-	let a = tegnTangent(xPOI,f)
-	tegnStigning(xPOI,f(xPOI),a) 
+	let a = tegnTangent(xPOI,f) // Tangent i et gitt punkt. Numerisk beregning av stigningstall
+	tegnStigning(xPOI,f(xPOI),a) // Annotering av stigningen i gitt punkt og med beregnet a
 	
 	xPOI = 4.41
-	tegnYlinje(f(xPOI),'red') // Horisontal linje
+	tegnYlinje(f(xPOI),'red') // Horisontal linje for gitt y
 	
-	tegnTittel('sin(x)*cos(2*x)');
+	tegnTittel('sin(x)*cos(2*x)'); 
 }
 
-function vedMusklikk(event){ 
-	let xp = event.offsetX
+function vedMusklikk(event){ // Omregner fra pikselkoordinater til verdenskoordinater
+	let xp = event.offsetX // Bruker hendelsesobjektet mottatt ved onclick i canvas
 	let	yp = event.offsetY
 	let [xv,yv] = tegnPix2V(xp,yp) // Verdenskoordinater fra pikselkoordinater
-	print('Punkt:', '('+xv.toFixed(2)+','+ yv.toFixed(2) +')' );
-	tegnPunkt(xv,f(xv))
+	print('Punkt:', '('+xv.toFixed(2)+','+ yv.toFixed(2) +')' ); // NB: Krever <texarea id='meldinger>
+	tegnPunkt(xv,f(xv)) // Tegner punktet. Med ekstra argumenter kan bruk av label styres.
 }
