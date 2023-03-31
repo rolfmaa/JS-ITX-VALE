@@ -14,8 +14,26 @@ window.onload = winInit ;   // Når nettsiden er ferdig lasta kjøres winInit
 function winInit(){
 	tegnBrukCanvas("canvas"); // Kobler sammen canvas med tegnepakka
 	elGetId("valgtCSV").onchange  = csvInput; // Funksjonen som mottar innholdet etter innlesing
+	lesFil('datafiler/xydata.csv')
 	visCSVdata();
 }
+
+//
+// De neste to funksjonene kan brukes ved innlesing av fil fra en server.
+// Direkte innlesing fra fil må løses med async og await.
+//
+async function lesFil(filnavn) {
+	filinnhold = await lastInn(filnavn);
+	csvAnalyser(filinnhold);
+}
+
+function lastInn(file) {
+    return fetch(file).then((response) => response.text() );
+}
+
+//
+// Så kommer hjelpefunksjoner for å analysere datasettet og vise innholdet grafisk i canvas
+//
 
 function csvInput(){ // Funksjon om knyttes til innlesingsknappen for CSV
 	let file = this.files[0]; // Objektet som lagre informasjonen etter fil-inn dialogen
