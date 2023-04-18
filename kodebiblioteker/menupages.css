@@ -1,6 +1,6 @@
 body {
   background-color: silver;  
-  margin: 0;
+  margin: 50px;
   padding: 0               
 }
 .hoved {
@@ -19,7 +19,7 @@ button {
   background-color: hsl(51, 81%, 55%);	
   color: black;
   margin: 10px;
-  padding: 15px;
+  padding: 10px;
   width: 225px;
   height: auto;
   border-radius: 5px;
