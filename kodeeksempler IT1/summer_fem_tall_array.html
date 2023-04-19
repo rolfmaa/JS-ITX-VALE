@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+    <title>Kalkulator</title>
+    <meta charset = "UTF-8">
+	<link rel="stylesheet" type="text/css" href="brukerinput.css">
+</head>
+
+<body>
+    <div id="hoved">
+        <h1> Beregn sum eller gjennomsnitt </h1>
+
+        <label for="tall1">Tall 1</label>
+        <input type="number" id="tall1">
+
+        <label for="tall2">Tall 2</label>
+        <input type="number" id="tall2">
+
+        <label for="tall3">Tall 3</label>
+        <input type="number" id="tall3">
+
+        <label for="tall1">Tall 4</label>
+        <input type="number" id="tall4">
+
+        <label for="tall1">Tall 5</label>
+        <input type="number" id="tall5">
+
+        <label for="sumellersnitt">Velg sum eller gjennomsnitt</label>
+        <select id="sumellersnitt">
+            <option value="sum">Sum</option>
+            <option value="gjennomsnitt">Gjennomsnitt</option>
+        </select>
+
+        <button>Beregn</button> 
+        <p> </p>
+       </div>
+
+<script>
+
+// Henter HTML-elementer
+let tallEls = document.querySelectorAll("input");
+let knappEl = document.querySelector("button");
+let sumellersnittEl = document.querySelector("select");
+let pEl = document.querySelector("p");
+
+// Legger til lytter på knappen
+knappEl.addEventListener("click", beregn);
+
+// Beregner sum eller snitt
+function beregn() {
+
+ // Finner først summen
+ let sum = 0;
+ for (let i = 0; i < tallEls.length; i++) {
+ sum += Number(tallEls[i].value);
+ }
+
+ // Sjekker hva brukeren har valgt
+ if (sumellersnittEl.value === "sum") {
+    pEl.innerHTML = "Summen av verdiene er " + sum + ".";
+ } else {
+    // Beregner gjennomsnittet
+    let snitt = sum / tallEls.length;
+    pEl.innerHTML = "Gjennomsnittet av verdiene er " + snitt + ".";
+ }
+}
+</script>
+
+</body>
+</html>

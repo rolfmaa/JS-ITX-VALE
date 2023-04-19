@@ -1,0 +1,35 @@
+/* input type="number" */
+input[type="number"] {
+  font-family: inherit; /* arver nettsidens skrifttype */
+  color: #666666; /* mørk grå tekstfarge */
+  border: 1px solid rgba(0,0,0,0.1); /* lys grå kantlinje */
+  border-radius: 4px; /* avrundet kantlinje */
+  padding: 5px; /* luft inni tekstboksene */
+  box-shadow: 0 1px 5px rgba(0,0,0,0.7); /* skygge på tekstboksene */
+  box-sizing: border-box; /* teller med kantlinjen i bredden */
+  display: block; /* elementene havner på egne rader */
+  margin-top: 2px; /* litt mellomrom til elementet ovenfor */
+  margin-bottom: 10px; /* litt mellomrom til elementet nedenfor */
+  min-width: 130px; /* aldri smalere enn 130 px */
+  width: 30%; /* fyller ut 30 % av innpakningen */
+}
+
+/*
+ *  knapper (button)
+ */
+button {
+  padding: 10px; /* luft inni knappen */
+  color: white; /* hvit tekstfarge */
+  text-shadow: 0 -1px 1px #335166; /* skygge på teksten */
+  border: 1px solid rgba(0, 0, 0, 0.1); /* lys grå kantlinje */
+  border-radius: 4px; /* avrunder kantene */
+  background: linear-gradient(rgba(255,255,255,0.2), transparent);
+  background-color: #5588AA; /* blå bakgrunnsfarge */
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.7); /* skygge bak knappen */
+  outline: none; /* fjerne ekstra kantlinje */
+  cursor: pointer; /* gjør om musepekeren til en hånd */
+}
+
+button:active {
+  transform: translate(1px, 1px); /* 1 px til høyre og 1 px ned */
+}
