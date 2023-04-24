@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+	<meta charset="utf-8" />
+	<title>Mediebarometer</title> 
+	<link rel="stylesheet" type="text/css" href="stil.css" />
+
+	<script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+	<script src = "https://fulab.no/fulibs/fusionSDK.js" > </script>
+	<script src = "../kodebiblioteker/teamtools.js" > </script>
+
+	<script src = "script.js"> </script> 
+</head>	 
+
+<body>
+	<center>
+	<div class="container">
+		<h1>Norsk mediebarometer</h1>
+		<p>
+		Bruk av digtale medier i perioden 2000-2021. Antall minutter på en gjennomsnittsdag.<br>
+		Data fra statistikkbanken. <a href = 'https://www.ssb.no/statbank/list/medie/'>Se her</a>
+		</p>
+		<br>
+		<label for  ='valgtCSV' > Les inn CSV-fil fra egen maskin </label>
+	    <input type ="file" id="valgtCSV"  accept = '.csv' > 
+		<br><br>
+		<canvas 	id = "canvas" width= "600px" height = "450px"> </canvas><br><br>
+		<table id="datatabell"></table>
+	</div>
+	</center>
+</body>
+
+</html>
