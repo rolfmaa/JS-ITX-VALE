@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+	<meta charset="utf-8" />
+	<title> Les lokal fil</title> 
+	<link rel="stylesheet" type="text/css" href="stil.css" />	
+
+	<!-- Inkluderer biblioteker fra fulib.no. Funksjonsbeskrivelse i manualsidene . -->
+	<script src = "https://fulab.no/fulibs/fusionSDK.js" > </script>
+	<script src = "../kodebiblioteker/teamtools.js" > </script>
+	<script src = "script.js?v=2"> </script> 	<!-- Programmets egendefinert kode -->
+	<center>
+		<h1>Sykkelturer</h1>
+		<p>
+		Programmet viser en oversikt over sykkelturer i Oslo. Turene er lagret på en CSV-fil.
+		Ved nedlasting fra GitHub får du også tilgang til datasettet. Dette eksempelet har funksjonalitet for innlesing fra en
+		webserver i tillegg til innlesing fra fil på egen datamaskin.
+		</p>
+		<br>
+		<label for  ='valgtCSV' > Les inn CSV-fil fra egen maskin </label>
+	    <input type ="file" id="valgtCSV"  accept = '.csv' > 
+		<br><br>
+		<canvas 	id = "canvas" width= "800px" height = "600px"> </canvas><br>
+	<center>
+</head> 
+</html>
